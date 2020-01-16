@@ -1,0 +1,16 @@
+#The script creates local users in windows 10
+
+for ($i=0; $i -lt 5; $i++)
+{
+    $minLength = 5 ## characters
+    $maxLength = 10 ## characters
+    $length = Get-Random -Minimum $minLength -Maximum $maxLength
+    $nonAlphaChars = 5
+    $password = [System.Web.Security.Membership]::GeneratePassword($length, $nonAlphaChars)
+
+    $secPw = ConvertTo-SecureString -String $password -AsPlainText -Force
+
+    New-LocalUser "new_user$i" -Password $secPw -FullName "first User" -Description "Description of this account." 
+    Write-Host "new_user$i created successfully with password $password"
+}
+
