@@ -1,0 +1,7 @@
+#The script creates local users in windows 10
+
+for ($i=0; $i -lt 55; $i++)
+{
+    Write-Host "The number you see in green is $i" -ForegroundColor Green
+}
+
