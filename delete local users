@@ -1,0 +1,8 @@
+#The script creates local users in windows 10
+
+for ($i=0; $i -lt 55; $i++)
+{
+Remove-LocalUser -Name "new_user$i"
+write-host "new_user$i got deleted"
+}
+
